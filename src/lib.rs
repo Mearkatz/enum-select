@@ -2,7 +2,7 @@ use inquire::{InquireError, MultiSelect, Select};
 use std::str::FromStr;
 use strum::VariantNames;
 
-trait SelectVariant: VariantNames + FromStr {
+pub trait SelectVariant: VariantNames + FromStr {
     /// Selects a single variant from this Enum.
     fn select_one_variant(message: &str) -> Result<Self, InquireError> {
         Select::new(message, Self::VARIANTS.to_vec())
