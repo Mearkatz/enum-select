@@ -1,5 +1,5 @@
-use inquire::{InquireError, MultiSelect, Select};
-use std::{fmt::Display, vec::Vec};
+use inquire::{MultiSelect, Select};
+use std::fmt::Display;
 use strum::VariantArray;
 
 pub trait Selectable: VariantArray + Display + Clone {
