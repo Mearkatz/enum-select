@@ -2,7 +2,7 @@ use inquire::{InquireError, MultiSelect, Select};
 use std::{fmt::Display, vec::Vec};
 use strum::VariantArray;
 
-trait Selectable: VariantArray + Display + Clone {
+pub trait Selectable: VariantArray + Display + Clone {
     fn select_one(message: &str) -> Select<'_, Self> {
         Select::new(message, Self::VARIANTS.to_vec())
     }
